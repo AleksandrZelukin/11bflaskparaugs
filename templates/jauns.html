@@ -1,0 +1,15 @@
+  {% extends 'base.html' %}
+
+  {% block content %}
+  {{ super() }}
+  <p>Galvena lapa</p>
+ <h1>Skolēns</h1>
+  <div>
+  <form method="post">
+  <input type="text" name="vards" id="vards" placeholder="nomnieka vārds">
+  <input type="text" name="uzvards" id="uzvards" placeholder="nomnieka uzvārds">
+  <input type="text" name="talrunis" id="talrunis" placeholder="nomnieka talrunis">
+  <input class="button" type="submit" value="Sūtit">    
+  </form>
+  </div>
+   {% endblock %}

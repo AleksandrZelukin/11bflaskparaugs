@@ -1,0 +1,24 @@
+<! DOCTYPE html>
+<html>
+<head>
+{% block title -%}
+{% if title %}
+  <title>Datu baze - {{title}}</title>
+{% else %}
+  <title>Datu Baze</title>
+  {% endif %}
+  {% endblock %}
+</head>
+  <body>
+{% block content -%}
+    {% block mainmenu -%}
+    <a href="/">Galvena lapa</a>
+    <a href="/jauns">Jauns Skolēns</a>
+    <a href="/dati">Uz tabulu</a>
+    <a href="/delete">Dzēst ierākstu</a>
+    <a href="/par">Par</a>
+     {% endblock mainmenu -%}
+{% endblock -%}
+   <p> &copy 2024 Aleksandr Zelukin</p>
+  </body>
+</html>

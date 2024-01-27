@@ -1,0 +1,30 @@
+  {% extends 'base.html' %}
+
+  {% block content %}
+  {{ super() }}
+  <p>Galvena lapa</p>
+
+Sveiciens no 92. vidusskolā
+
+<table border="1">
+<tr>
+  <td>Sklēna ID</td>
+  <td>Vārds</td>
+  <td>Uzvārds</td>
+  <td>Talrunis</td>
+</tr>
+  {%  for el in rows  %}
+<tr>
+  <td>{{ el[0] }}</td>
+  <td>{{ el[1] }}</td>
+  <td>{{ el[2] }}</td>
+  <td>{{ el[3] }}</td>
+</tr>
+  {% endfor %}
+</table>
+
+ <a href="/delete">Dzēst ierākstu</a>
+  {% endblock %}
+
+
+</html>
