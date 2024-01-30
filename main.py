@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 db = sqlite3.connect('datubaze.db')
 sql = db.cursor()
-sql.execute("""CREATE TABLE IF NOT EXISTS nomnieks(
+sql.execute("""CREATE TABLE IF NOT EXISTS skolnieki(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     "vards" TEXT, 
     "uzvards" TEXT, 
-    "talrunis" TEXT
+    "perskods" TEXT
 )""")
 
 db.commit()
@@ -20,15 +20,15 @@ def index():
   return render_template("index.html", title="Galvena Lapa") 
 
 @app.route('/jauns', methods=['POST', 'GET'])
-def nomnieki():
+def skolnieki():
     if request.method == "POST":
         vards = request.form["vards"]
         uzvards = request.form["uzvards"]
-        talrunis = request.form["talrunis"]
-        a = [vards,uzvards,talrunis]
+        pk = request.form["personas kods"]
+        a = [vards,uzvards,pk]
         db = sqlite3.connect('datubaze.db')
         sql = db.cursor()
-        sql.execute("INSERT INTO nomnieks(vards,uzvards,talrunis) VALUES(?,?,?)",a)
+        sql.execute("INSERT INTO skolnieki(vards,uzvards,perskods) VALUES(?,?,?)",a)
         db.commit()
     return render_template('jauns.html')
 db.close()
@@ -37,7 +37,7 @@ db.close()
 def dati():
   db = sqlite3.connect('datubaze.db')
   sql = db.cursor()
-  sql.execute("SELECT * FROM nomnieks")
+  sql.execute("SELECT * FROM skolnieki")
   records = sql.fetchall()
   #print(records)
   return render_template("dati.html", rows = records)
@@ -52,7 +52,7 @@ def deleterecord():
     with sqlite3.connect("datubaze.db") as con:  
         try:  
             cur = con.cursor()  
-            cur.execute("delete from nomnieks where id = ?",id)  
+            cur.execute("delete from skolnieki where id = ?",id)  
             msg = "record successfully deleted" 
         except:  
             msg = "can't be deleted" 
