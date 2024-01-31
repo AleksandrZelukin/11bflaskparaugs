@@ -8,13 +8,22 @@
   <body>
 {% block content -%}
     {% block mainmenu -%}
-    <a href="/">Galvena lapa</a>
+<nav>
+  <!-- <ul>
+   <li><a href="/">Galvena lapa</a></li> 
+  <li><a href="/jauns">Jauns Skolēns</a></li>
+  <li><a href="/dati">Uz tabulu</a></li>
+ <li><a href="/delete">Dzēst ierākstu</a></li> 
+ <li><a href="/par">Par</a></li> 
+  </ul>-->
+  <a href="/">Galvena lapa</a>
     <a href="/jauns">Jauns Skolēns</a>
     <a href="/dati">Uz tabulu</a>
     <a href="/delete">Dzēst ierākstu</a>
     <a href="/par">Par</a>
+</nav>
      {% endblock mainmenu -%}
 {% endblock -%}
-   <p> &copy 2024 Aleksandr Zelukin</p>
+   <footer>&copy 2024 Aleksandr Zelukin</footer>
   </body>
 </html>

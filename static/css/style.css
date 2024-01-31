@@ -68,17 +68,32 @@ td {
     cursor: pointer;
 }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #002e7a;
-  color: white;
-  text-align: center;
-}
+
+  
+
 .button1 {padding: 10px 24px;}
 .button2 {padding: 12px 28px;}
 .button3 {padding: 14px 40px;}
 .button4 {padding: 32px 16px;}
 .button5 {padding: 16px;}
+
+ul {
+  list-style: none; 
+  margin: 20; 
+  padding-left: 20; }
+  
+li {float: left;}
+a {text-decoration: none; }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #002e7a;
+    color: white;
+    text-align: center;
+  }
+nav {
+background-color: #ffff00;
+text-align: center;
