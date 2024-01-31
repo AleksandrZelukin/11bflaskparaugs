@@ -8,8 +8,6 @@
   {{ super() }}
   <h1>Skolēnu saraksts</h1>
 
-Sveiciens no 92. vidusskolā
-
 <table border="1">
 <tr>
   <td>Skolēna ID</td>
@@ -26,8 +24,14 @@ Sveiciens no 92. vidusskolā
 </tr>
   {% endfor %}
 </table>
-
- <a href="/delete">Dzēst ierākstu</a>
+<div>
+  <h3>Dzēst ierakstu no sarakstā</h3>  
+  <form action="/deleterecord" method="post"> 
+  Skolēna ID <input type="text" name="id">  
+  <input type="submit" value="OK">  
+  </form>  
+</div>
+<!-- <a href="/delete">Dzēst ierākstu</a>  --> 
   {% endblock %}
 
 
