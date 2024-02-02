@@ -14,11 +14,15 @@ sql.execute("""CREATE TABLE IF NOT EXISTS skolnieki(
     "perskods" TEXT
 )""")
 
+
 db.commit()
-@app.route('/')
+
+
+
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
   return render_template("index.html", title="Galvena Lapa") 
-  #return render_template("login.html", title="Ieeja vietnē")
 
 @app.route('/jauns', methods=['POST', 'GET'])
 def skolnieki():
